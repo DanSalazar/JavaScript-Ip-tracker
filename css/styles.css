@@ -6,7 +6,7 @@
 }
 
 body {
-  width: 100%;
+  font-size: 18px;
   font-family: "Rubik", sans-serif;
 }
 
@@ -17,94 +17,203 @@ main {
 main .header {
   background: url(../images/pattern-bg.png) no-repeat center/cover;
   color: #fff;
-  width: 100%;
-  height: 30vh;
+  max-height: 35vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 25px 0px;
 }
 
+@media only screen and (min-height: 1365px) {
+  main .header {
+    max-height: 20vh;
+  }
+}
+
 main .header h1 {
+  text-align: center;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 24px;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .header h1 {
+    font-size: 30px;
+  }
+}
+
+main .header form {
   text-align: center;
+  margin: 0px 0px 20px 0px;
 }
 
-main .header #validation {
-  margin: 10px 0px 0px 0px;
-  color: #cf6a87;
+@media only screen and (min-width: 1024px) {
+  main .header form {
+    margin: 0px 0px 45px 0px;
+  }
 }
 
-main .header .form {
-  text-align: center;
-  width: 90%;
+@media only screen and (max-width: 325px) {
+  main .header form {
+    margin: 0px 0px 20px 0px;
+  }
 }
 
-main .header .form input {
+main .header form input {
   background: #fff;
-  padding: 20px 25px;
-  border-radius: 16px 0px 0px 16px;
-  font-size: 21px;
-  display: inline-block;
-  width: 82%;
+  padding: 16px;
+  border-radius: 12px 0px 0px 12px;
+  font-family: "Rubik", sans-serif;
+  position: relative;
+  right: -1%;
+  width: 75%;
   color: #2b2b2b;
-  font-weight: 500;
   margin-top: 20px;
+  font-weight: 400;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
-main .header .form button {
+@media only screen and (min-width: 1024px) {
+  main .header form input {
+    font-size: 18px;
+    width: 30%;
+  }
+}
+
+main .header form button {
   position: relative;
-  padding: 20px;
-  font-size: 21px;
-  left: -5px;
+  padding: 16px;
+  left: -1%;
+  width: 15%;
   background: #000;
   outline: none;
   border: none;
-  border-radius: 0px 16px 16px 0px;
+  border-radius: 0px 12px 12px 0px;
   cursor: pointer;
   transition: 0.2s linear;
 }
 
-main .header .form button:hover {
-  opacity: 0.8;
+@media only screen and (min-width: 1024px) {
+  main .header form button {
+    font-size: 19px;
+    width: 4%;
+  }
 }
 
-main .header .form input[type="text"]::placeholder {
-  font-size: 14px;
+main .header form button img {
+  width: 10px;
+}
+
+main .header form button:hover {
+  background: #383838;
+}
+
+main .header form input[type="text"]::placeholder {
+  font-size: 12px;
+  color: #969696;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
 }
 
-main .parameters {
+@media only screen and (min-width: 1024px) {
+  main .header form input[type="text"]::placeholder {
+    font-size: 16px;
+  }
+}
+
+main .header .parameters {
+  display: block;
+  margin: auto;
   text-align: center;
   background: #fff;
-  width: 90%;
-  position: relative;
   z-index: 20;
-  top: 18px;
-  border-radius: 16px;
-  padding: 5px 0px;
+  width: 90%;
+  border-radius: 12px;
+  padding: 10px 25px;
 }
 
-main .parameters .p-container {
-  margin: 20px 0px;
+@media only screen and (min-width: 1024px) {
+  main .header .parameters {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    align-items: center;
+    height: 300px;
+    padding: 20px 10px;
+  }
 }
 
-main .parameters .p-container h6 {
+main .header .parameters hr {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .header .parameters hr {
+    display: inline-block;
+    margin: 0px 10px;
+    opacity: 0.3;
+    height: 60%;
+  }
+}
+
+main .header .parameters .p-container {
+  margin: 15px 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .header .parameters .p-container {
+    width: 240px;
+    padding: 0px 10px;
+  }
+}
+
+main .header .parameters .p-container h6 {
   color: #969696;
-  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 9px;
+  margin: 0px 0px 8px 0px;
 }
 
-main .parameters .p-container h4 {
-  font-size: 22px;
+@media only screen and (min-width: 1024px) {
+  main .header .parameters .p-container h6 {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  main .header .parameters .p-container h6 {
+    font-size: 8px;
+  }
+}
+
+main .header .parameters .p-container h4 {
+  font-size: 20px;
   color: #2b2b2b;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .header .parameters .p-container h4 {
+    font-size: 23px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  main .header .parameters .p-container h4 {
+    font-size: 16px;
+  }
 }
 
 #mapid {
   z-index: 1;
-  height: 70vh;
+  height: 65vh;
+}
+
+@media only screen and (min-height: 1365px) {
+  #mapid {
+    height: 80vh;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
