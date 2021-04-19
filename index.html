@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Frontend Mentor | IP Address Tracker</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,20 +17,58 @@
   </style> -->
 </head>
 <body>
+    
+  <main>
 
-  IP Address Tracker
+    <div class="header">
 
-  Search for any IP address or domain
+      <h1>IP Address Tracker</h1>
+      
+      <div class="form">
+        <input type="text" placeholder="Search for any IP address or domain" id="field">
+        <button id="btn-submit"><img src="./images/icon-arrow.svg" alt=""></button>
+      </div>
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-<!--   
+      <span id="validation"></span>
+
+      <section class="parameters">
+        <div class="p-container">
+          <h6>IP Address</h6>
+          <h4 class="ip-address"></h4>
+        </div>
+        <div class="p-container">
+          <h6>Location</h6>
+          <h4 class="location"></h4>
+        </div>
+        <div class="p-container">
+          <h6>Timezone</h6>
+          <h4 class="utc"></h4> 
+        </div>
+        <div class="p-container">
+          <h6>ISP</h6>
+          <h4 class="isp"></h4>
+        </div>
+      </section>
+      
+    </div>
+    
+
+    <div id="mapid"></div>
+  </main>
+
+   
+
+  
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="./Js/index.js"></script>
+
+  <!--   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  
 </body>
 </html>
