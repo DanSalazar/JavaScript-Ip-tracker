@@ -67,7 +67,7 @@ main {
             margin: 0px 0px 20px 0px;
             
             @include QuerieMinWidth($laptop){
-                width: 50%;
+                width: 45%;
                 margin: 0px 0px 50px 0px;
             }
 
@@ -146,7 +146,7 @@ main {
             justify-content: space-evenly;
             text-align: start;
             align-items: center;
-            height: 280px;
+            height: 300px;
             padding: 15px 30px;
         }
 
