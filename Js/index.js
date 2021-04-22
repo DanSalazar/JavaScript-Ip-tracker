@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Functions
 
     const getLocation = async (ip) => {
-        let data = await fetch(`https://geo.ipify.org/api/v1?apiKey=at_qqhdQwtJdthHBn3SPSQvvrddLT7tl&ipAddress=${ip}`);
+        let data = await fetch(`https://geo.ipify.org/api/v1?apiKey=at_g9obwMDynKCF2q3vNXbDikaLoatQ5&ipAddress=${ip}`);
         let json = await data.json();
         return json;
     }

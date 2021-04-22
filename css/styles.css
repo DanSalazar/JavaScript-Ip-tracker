@@ -6,7 +6,6 @@
 }
 
 body {
-  width: 100%;
   font-size: 18px;
   font-family: "Rubik", sans-serif;
 }
@@ -18,7 +17,6 @@ main {
 main .header {
   background: url(../images/pattern-bg.png) no-repeat center/cover;
   color: #fff;
-  width: 100%;
   max-height: 35vh;
   display: flex;
   flex-direction: column;
@@ -68,12 +66,12 @@ main .header form input {
   border-radius: 16px 0px 0px 16px;
   font-family: "Rubik", sans-serif;
   width: 75%;
-  display: inline-block;
   color: #2b2b2b;
   margin-top: 20px;
   font-weight: 400;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -123,10 +121,10 @@ main .header form input[type="text"]::placeholder {
 main .parameters {
   text-align: center;
   background: #fff;
-  width: 88.5%;
+  width: 82%;
   z-index: 20;
   border-radius: 16px;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -168,7 +166,7 @@ main .parameters .p-container h6 {
 
 @media only screen and (min-width: 1024px) {
   main .parameters .p-container h6 {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -185,7 +183,7 @@ main .parameters .p-container h4 {
 
 @media only screen and (min-width: 1024px) {
   main .parameters .p-container h4 {
-    font-size: 26px;
+    font-size: 25px;
   }
 }
 

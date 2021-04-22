@@ -24,8 +24,6 @@
     }
 };
 
-
-
 * {
     padding: 0;
     margin: 0;
@@ -33,7 +31,6 @@
 }
 
 body {
-    width: 100%;
     font-size: 18px;
     font-family: $Rubik;
 }
@@ -44,7 +41,6 @@ main {
     .header {  
         background: url(../images/pattern-bg.png)no-repeat center/cover;
         color: #fff;
-        width: 100%;
         max-height: 35vh;
         display: flex;
         flex-direction: column;
@@ -79,19 +75,18 @@ main {
                 margin: 0px 0px 20px 0px;
             }
 
-
             input {
                 background: #fff;
                 padding: 16px 20px;
                 border-radius:$borderR 0px 0px $borderR;
                 font-family: $Rubik;
                 width: 75%;
-                display: inline-block;
                 color: $VeryDarkGray;
                 margin-top: 20px;
                 font-weight: 400;
                 border: none;
                 outline: none;
+                cursor: pointer;
 
                 @include QuerieMinWidth($laptop){
                     font-size: 18px;
@@ -140,11 +135,10 @@ main {
     .parameters {
         text-align: center;
         background: #fff;
-        width: 88.5%;
+        width: 82%;
         z-index: 20;
         border-radius: $borderR;
-        padding: 10px;
-
+        padding: 10px 20px;
 
         @include QuerieMinWidth($laptop){
             width: 75%;
@@ -179,7 +173,7 @@ main {
                 margin: 0px 0px 8px 0px;
 
                 @include QuerieMinWidth($laptop){
-                    font-size: 15px;
+                    font-size: 14px;
                 }
 
                 @include QuerieMaxWidth($mobileSm){
@@ -193,7 +187,7 @@ main {
                 color: $VeryDarkGray;
 
                 @include QuerieMinWidth($laptop){
-                    font-size: 26px;
+                    font-size: 25px;
                 }
 
                 @include QuerieMaxWidth($mobileSm){
@@ -202,9 +196,7 @@ main {
                 
             }
         }
-
     }
-
 }
 
 #mapid {
