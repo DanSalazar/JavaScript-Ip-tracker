@@ -7,6 +7,7 @@
 
 body {
   width: 100%;
+  font-size: 18px;
   font-family: "Rubik", sans-serif;
 }
 
@@ -18,47 +19,72 @@ main .header {
   background: url(../images/pattern-bg.png) no-repeat center/cover;
   color: #fff;
   width: 100%;
-  height: 30vh;
+  max-height: 35vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 25px 0px;
 }
 
+@media only screen and (min-height: 1365px) {
+  main .header {
+    max-height: 20vh;
+  }
+}
+
 main .header h1 {
   font-weight: 400;
   font-size: 25px;
-  text-align: center;
 }
 
-main .header #validation {
-  margin: 10px 0px 0px 0px;
-  color: #cf6a87;
+@media only screen and (min-width: 1024px) {
+  main .header h1 {
+    font-size: 30px;
+  }
 }
 
-main .header .form {
+main .header form {
   text-align: center;
   width: 90%;
+  margin: 0px 0px 20px 0px;
 }
 
-main .header .form input {
+@media only screen and (min-width: 1024px) {
+  main .header form {
+    width: 50%;
+    margin: 0px 0px 50px 0px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  main .header form {
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+main .header form input {
   background: #fff;
-  padding: 20px 25px;
+  padding: 16px 20px;
   border-radius: 16px 0px 0px 16px;
-  font-size: 21px;
+  font-family: "Rubik", sans-serif;
+  width: 75%;
   display: inline-block;
-  width: 82%;
   color: #2b2b2b;
-  font-weight: 500;
   margin-top: 20px;
+  font-weight: 400;
   border: none;
   outline: none;
 }
 
-main .header .form button {
+@media only screen and (min-width: 1024px) {
+  main .header form input {
+    font-size: 18px;
+  }
+}
+
+main .header form button {
   position: relative;
-  padding: 20px;
-  font-size: 21px;
+  padding: 16px 20px;
   left: -5px;
   background: #000;
   outline: none;
@@ -68,43 +94,115 @@ main .header .form button {
   transition: 0.2s linear;
 }
 
-main .header .form button:hover {
-  opacity: 0.8;
+@media only screen and (min-width: 1024px) {
+  main .header form button {
+    font-size: 19px;
+  }
 }
 
-main .header .form input[type="text"]::placeholder {
-  font-size: 14px;
+main .header form button img {
+  width: 80%;
+}
+
+main .header form button:hover {
+  background: #383838;
+}
+
+main .header form input[type="text"]::placeholder {
+  font-size: 12px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .header form input[type="text"]::placeholder {
+    font-size: 14px;
+  }
 }
 
 main .parameters {
   text-align: center;
   background: #fff;
-  width: 90%;
-  position: relative;
+  width: 88.5%;
   z-index: 20;
-  top: 18px;
   border-radius: 16px;
-  padding: 5px 0px;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .parameters {
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: start;
+    align-items: center;
+    height: 280px;
+    padding: 15px 30px;
+  }
+}
+
+main .parameters hr {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .parameters hr {
+    display: inline-block;
+    margin: 0px 10px;
+    opacity: 0.3;
+    height: 50%;
+  }
 }
 
 main .parameters .p-container {
-  margin: 20px 0px;
+  margin: 15px 0px;
 }
 
 main .parameters .p-container h6 {
   color: #969696;
-  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 9px;
+  margin: 0px 0px 8px 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .parameters .p-container h6 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  main .parameters .p-container h6 {
+    font-size: 8px;
+  }
 }
 
 main .parameters .p-container h4 {
-  font-size: 22px;
+  font-size: 20px;
   color: #2b2b2b;
+}
+
+@media only screen and (min-width: 1024px) {
+  main .parameters .p-container h4 {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  main .parameters .p-container h4 {
+    font-size: 16px;
+  }
 }
 
 #mapid {
   z-index: 1;
-  height: 70vh;
+  height: 65vh;
+}
+
+@media only screen and (min-height: 1365px) {
+  #mapid {
+    height: 80vh;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

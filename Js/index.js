@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const isp = document.querySelector('.isp');
     const btnSubmit  = document.getElementById('btn-submit');
     const field = document.getElementById('field');
-    const textValidation = document.getElementById('validation');
-    let coords = [9.01667, -79.51667];
 
     // Map
 
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let myMap = L.map('mapid',{
         zoomControl: false
-    }).setView(coords, 13)
+    })
 
     let iconMap = L.icon({
         iconUrl: '../images/icon-location.svg',
@@ -23,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     L.tileLayer(tilesMapProvider, {
-        maxZoom: 18
+        maxZoom: 18,
     }).addTo(myMap)
 
 
@@ -34,25 +32,25 @@ document.addEventListener('DOMContentLoaded', () => {
         let json = await data.json();
         return json;
     }
-    const setLocation = async (res) => {
-        if(Object.entries(res).length > 2){
-            let coords = [res.location.lat, res.location.lng];
+    
+    const setLocation = async (geo) => {
+        if(Object.entries(geo).length > 2){
+            let coords = [geo.location.lat, geo.location.lng];
             let marker = L.marker(coords, {icon: iconMap}).addTo(myMap);
-            marker.bindPopup(`<span> ${res.ip} </span>`).openPopup;
-            isp.textContent = res.isp;
-            ipAddress.textContent = res.ip;
-            utc.textContent = "UTC" + res.location.timezone;
-            locationSelector.textContent = `${res.location.city} ${res.location.postalCode}`;
+            marker.bindPopup(`<span> ${geo.ip} </span>`).openPopup;
+            isp.textContent = geo.isp;
+            ipAddress.textContent = geo.ip;
+            utc.textContent = "UTC " + geo.location.timezone;
+            locationSelector.textContent = `${geo.location.city} ${geo.location.postalCode}`;
             myMap.setView(coords, 13)
-            textValidation.textContent = "";
-        } else textValidation.textContent = res.messages
+        }
     }
 
     // DOM Loaded
 
-    getLocation("190.141.53.220").then(res => setLocation(res));
+    getLocation("").then(res => setLocation(res));
 
-    // Event Listeners
+    // Events Listeners
 
     btnSubmit.onclick = function(e){
         e.preventDefault()

@@ -1,19 +1,40 @@
 @import 'variables.scss';
 
-@mixin Querie($breakpoint){
+@mixin QuerieMinWidth($breakpoint){
     @media only screen and(min-width: $breakpoint){
         @content
     }
-}
+};
+
+@mixin QuerieMaxWidth($breakpoint) {
+    @media only screen and (max-width: $breakpoint){
+        @content
+    }
+};
+
+@mixin QuerieMinHeight($breakpoint) {
+    @media only screen and (min-height: $breakpoint){
+        @content
+    }
+};
+
+@mixin QuerieMaxHeight($breakpoint) {
+    @media only screen and (max-height: $breakpoint){
+        @content
+    }
+};
+
+
 
 * {
-    padding:0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
     width: 100%;
+    font-size: 18px;
     font-family: $Rubik;
 }
 
@@ -24,62 +45,93 @@ main {
         background: url(../images/pattern-bg.png)no-repeat center/cover;
         color: #fff;
         width: 100%;
-        height: 30vh;
+        max-height: 35vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 25px 0px;
 
+        @include QuerieMinHeight($ipadPro){
+            max-height: 20vh;
+        }
+
         h1 {
             font-weight: 400;
             font-size: 25px;
-            text-align: center;
+
+            @include QuerieMinWidth($laptop){
+                font-size: 30px;
+            }
+
         }
 
-        #validation {
-            margin: 10px 0px 0px 0px;
-            color: #cf6a87;
-        }
-    
-        .form {
+        form {
             text-align: center;
             width: 90%;
+            margin: 0px 0px 20px 0px;
+            
+            @include QuerieMinWidth($laptop){
+                width: 50%;
+                margin: 0px 0px 50px 0px;
+            }
+
+            @include QuerieMaxWidth($mobileSm){
+                margin: 0px 0px 20px 0px;
+            }
+
 
             input {
                 background: #fff;
-                padding: 20px 25px;
-                border-radius: 16px 0px 0px 16px;
-                font-size: 21px;
+                padding: 16px 20px;
+                border-radius:$borderR 0px 0px $borderR;
+                font-family: $Rubik;
+                width: 75%;
                 display: inline-block;
-                width: 82%;
                 color: $VeryDarkGray;
-                font-weight: 500;
                 margin-top: 20px;
+                font-weight: 400;
                 border: none;
                 outline: none;
+
+                @include QuerieMinWidth($laptop){
+                    font-size: 18px;
+                }
+
             }
             
             button {
                 position: relative;
-                padding: 20px;
-                font-size: 21px;
+                padding: 16px 20px;
                 left: -5px;
                 background: #000;
                 outline: none;
                 border: none;
-                border-radius: 0px 16px 16px 0px;
+                border-radius: 0px $borderR $borderR 0px;
                 cursor: pointer;
                 transition: 0.2s linear;
+
+                @include QuerieMinWidth($laptop){
+                    font-size: 19px;
+                }
+
+                img {
+                    width: 80%;
+                }
+
             }
 
             button:hover {
-                opacity: 0.8;
+                background: $VeryDarkGrayH;
             }
     
             input[type="text"]::placeholder {
-                font-size: 14px;
+                font-size: 12px;
                 font-family: $Rubik;
                 font-weight: 400;
+
+                @include QuerieMinWidth($laptop){
+                    font-size: 14px;
+                }
             }
         }
 
@@ -88,24 +140,66 @@ main {
     .parameters {
         text-align: center;
         background: #fff;
-        width: 90%;
-        position: relative;
+        width: 88.5%;
         z-index: 20;
-        top: 18px;
         border-radius: $borderR;
-        padding: 5px 0px;
+        padding: 10px;
+
+
+        @include QuerieMinWidth($laptop){
+            width: 75%;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: start;
+            align-items: center;
+            height: 280px;
+            padding: 15px 30px;
+        }
+
+        hr {
+            display: none;
+
+            @include QuerieMinWidth($laptop){
+                display: inline-block;
+                margin: 0px 10px;
+                opacity: 0.3;
+                height: 50%;
+            }
+
+        }
 
         .p-container {
-            margin: 20px 0px;
+            margin: 15px 0px;
             
             h6 {
                 color: $DarkGray;
-                margin: 0px 0px 5px 0px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 9px;
+                margin: 0px 0px 8px 0px;
+
+                @include QuerieMinWidth($laptop){
+                    font-size: 15px;
+                }
+
+                @include QuerieMaxWidth($mobileSm){
+                    font-size: 8px;
+                }
+
             }
             
             h4 {
-                font-size: 22px;
+                font-size: 20px;
                 color: $VeryDarkGray;
+
+                @include QuerieMinWidth($laptop){
+                    font-size: 26px;
+                }
+
+                @include QuerieMaxWidth($mobileSm){
+                    font-size: 16px;
+                }
+                
             }
         }
 
@@ -113,8 +207,12 @@ main {
 
 }
 
-
 #mapid {
     z-index: 1;
-    height: 70vh;
+    height: 65vh;
+
+    @include QuerieMinHeight($ipadPro){
+        height: 80vh;
+    }
+
 }
