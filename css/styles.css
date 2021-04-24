@@ -20,7 +20,6 @@ main .header {
   max-height: 35vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 25px 0px;
 }
 
@@ -31,8 +30,9 @@ main .header {
 }
 
 main .header h1 {
+  text-align: center;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -43,14 +43,12 @@ main .header h1 {
 
 main .header form {
   text-align: center;
-  width: 90%;
   margin: 0px 0px 20px 0px;
 }
 
 @media only screen and (min-width: 1024px) {
   main .header form {
-    width: 50%;
-    margin: 0px 0px 50px 0px;
+    margin: 0px 0px 45px 0px;
   }
 }
 
@@ -62,9 +60,11 @@ main .header form {
 
 main .header form input {
   background: #fff;
-  padding: 16px 20px;
-  border-radius: 16px 0px 0px 16px;
+  padding: 16px;
+  border-radius: 12px 0px 0px 12px;
   font-family: "Rubik", sans-serif;
+  position: relative;
+  right: -1%;
   width: 75%;
   color: #2b2b2b;
   margin-top: 20px;
@@ -77,17 +77,19 @@ main .header form input {
 @media only screen and (min-width: 1024px) {
   main .header form input {
     font-size: 18px;
+    width: 30%;
   }
 }
 
 main .header form button {
   position: relative;
-  padding: 16px 20px;
-  left: -5px;
+  padding: 16px;
+  left: -1%;
+  width: 15%;
   background: #000;
   outline: none;
   border: none;
-  border-radius: 0px 16px 16px 0px;
+  border-radius: 0px 12px 12px 0px;
   cursor: pointer;
   transition: 0.2s linear;
 }
@@ -95,11 +97,12 @@ main .header form button {
 @media only screen and (min-width: 1024px) {
   main .header form button {
     font-size: 19px;
+    width: 4%;
   }
 }
 
 main .header form button img {
-  width: 80%;
+  width: 10px;
 }
 
 main .header form button:hover {
@@ -108,55 +111,65 @@ main .header form button:hover {
 
 main .header form input[type="text"]::placeholder {
   font-size: 12px;
+  color: #969696;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
 }
 
 @media only screen and (min-width: 1024px) {
   main .header form input[type="text"]::placeholder {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
-main .parameters {
+main .header .parameters {
+  display: block;
+  margin: auto;
   text-align: center;
   background: #fff;
-  width: 82%;
   z-index: 20;
-  border-radius: 16px;
-  padding: 10px 20px;
+  width: 90%;
+  border-radius: 12px;
+  padding: 10px 25px;
 }
 
 @media only screen and (min-width: 1024px) {
-  main .parameters {
+  main .header .parameters {
     width: 75%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     text-align: start;
     align-items: center;
-    height: 280px;
-    padding: 15px 30px;
+    height: 300px;
+    padding: 20px 10px;
   }
 }
 
-main .parameters hr {
+main .header .parameters hr {
   display: none;
 }
 
 @media only screen and (min-width: 1024px) {
-  main .parameters hr {
+  main .header .parameters hr {
     display: inline-block;
     margin: 0px 10px;
     opacity: 0.3;
-    height: 50%;
+    height: 60%;
   }
 }
 
-main .parameters .p-container {
+main .header .parameters .p-container {
   margin: 15px 0px;
 }
 
-main .parameters .p-container h6 {
+@media only screen and (min-width: 1024px) {
+  main .header .parameters .p-container {
+    width: 240px;
+    padding: 0px 10px;
+  }
+}
+
+main .header .parameters .p-container h6 {
   color: #969696;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -165,30 +178,30 @@ main .parameters .p-container h6 {
 }
 
 @media only screen and (min-width: 1024px) {
-  main .parameters .p-container h6 {
-    font-size: 14px;
+  main .header .parameters .p-container h6 {
+    font-size: 10px;
   }
 }
 
 @media only screen and (max-width: 325px) {
-  main .parameters .p-container h6 {
+  main .header .parameters .p-container h6 {
     font-size: 8px;
   }
 }
 
-main .parameters .p-container h4 {
+main .header .parameters .p-container h4 {
   font-size: 20px;
   color: #2b2b2b;
 }
 
 @media only screen and (min-width: 1024px) {
-  main .parameters .p-container h4 {
-    font-size: 25px;
+  main .header .parameters .p-container h4 {
+    font-size: 23px;
   }
 }
 
 @media only screen and (max-width: 325px) {
-  main .parameters .p-container h4 {
+  main .header .parameters .p-container h4 {
     font-size: 16px;
   }
 }

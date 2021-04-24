@@ -44,7 +44,6 @@ main {
         max-height: 35vh;
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding: 25px 0px;
 
         @include QuerieMinHeight($ipadPro){
@@ -52,8 +51,9 @@ main {
         }
 
         h1 {
+            text-align: center;
             font-weight: 400;
-            font-size: 25px;
+            font-size: 24px;
 
             @include QuerieMinWidth($laptop){
                 font-size: 30px;
@@ -63,12 +63,10 @@ main {
 
         form {
             text-align: center;
-            width: 90%;
             margin: 0px 0px 20px 0px;
             
             @include QuerieMinWidth($laptop){
-                width: 45%;
-                margin: 0px 0px 50px 0px;
+                margin: 0px 0px 45px 0px;
             }
 
             @include QuerieMaxWidth($mobileSm){
@@ -77,9 +75,11 @@ main {
 
             input {
                 background: #fff;
-                padding: 16px 20px;
+                padding: 16px;
                 border-radius:$borderR 0px 0px $borderR;
                 font-family: $Rubik;
+                position: relative;
+                right: -1%;
                 width: 75%;
                 color: $VeryDarkGray;
                 margin-top: 20px;
@@ -90,14 +90,16 @@ main {
 
                 @include QuerieMinWidth($laptop){
                     font-size: 18px;
+                    width: 30%;
                 }
 
             }
             
             button {
                 position: relative;
-                padding: 16px 20px;
-                left: -5px;
+                padding: 16px;
+                left: -1%;
+                width: 15%;
                 background: #000;
                 outline: none;
                 border: none;
@@ -107,10 +109,11 @@ main {
 
                 @include QuerieMinWidth($laptop){
                     font-size: 19px;
+                    width: 4%;
                 }
 
                 img {
-                    width: 80%;
+                    width:10px;
                 }
 
             }
@@ -121,83 +124,91 @@ main {
     
             input[type="text"]::placeholder {
                 font-size: 12px;
+                color: $DarkGray;
                 font-family: $Rubik;
                 font-weight: 400;
 
                 @include QuerieMinWidth($laptop){
-                    font-size: 14px;
-                }
-            }
-        }
-
-    }
-
-    .parameters {
-        text-align: center;
-        background: #fff;
-        width: 82%;
-        z-index: 20;
-        border-radius: $borderR;
-        padding: 10px 20px;
-
-        @include QuerieMinWidth($laptop){
-            width: 75%;
-            display: flex;
-            justify-content: space-evenly;
-            text-align: start;
-            align-items: center;
-            height: 300px;
-            padding: 15px 30px;
-        }
-
-        hr {
-            display: none;
-
-            @include QuerieMinWidth($laptop){
-                display: inline-block;
-                margin: 0px 10px;
-                opacity: 0.3;
-                height: 50%;
-            }
-
-        }
-
-        .p-container {
-            margin: 15px 0px;
-            
-            h6 {
-                color: $DarkGray;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-size: 9px;
-                margin: 0px 0px 8px 0px;
-
-                @include QuerieMinWidth($laptop){
-                    font-size: 14px;
-                }
-
-                @include QuerieMaxWidth($mobileSm){
-                    font-size: 8px;
-                }
-
-            }
-            
-            h4 {
-                font-size: 20px;
-                color: $VeryDarkGray;
-
-                @include QuerieMinWidth($laptop){
-                    font-size: 25px;
-                }
-
-                @include QuerieMaxWidth($mobileSm){
                     font-size: 16px;
                 }
-                
             }
         }
+
+        .parameters {
+            display: block;
+            margin: auto;
+            text-align: center;
+            background: #fff;
+            z-index: 20;
+            width: 90%;
+            border-radius: $borderR;
+            padding: 10px 25px;
+    
+            @include QuerieMinWidth($laptop){
+                width: 75%;
+                display: flex;
+                justify-content: center;
+                text-align: start;
+                align-items: center;
+                height: 300px;
+                padding: 20px 10px;
+            }
+    
+            hr {
+                display: none;
+    
+                @include QuerieMinWidth($laptop){
+                    display: inline-block;
+                    margin: 0px 10px;
+                    opacity: 0.3;
+                    height: 60%;
+                }
+    
+            }
+    
+            .p-container {
+                margin: 15px 0px;
+
+                @include QuerieMinWidth($laptop){
+                    width: 240px;
+                    padding: 0px 10px;
+                }
+                
+                h6 {
+                    color: $DarkGray;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 9px;
+                    margin: 0px 0px 8px 0px;
+    
+                    @include QuerieMinWidth($laptop){
+                        font-size: 10px;
+                    }
+    
+                    @include QuerieMaxWidth($mobileSm){
+                        font-size: 8px;
+                    }
+    
+                }
+                
+                h4 {
+                    font-size: 20px;
+                    color: $VeryDarkGray;
+    
+                    @include QuerieMinWidth($laptop){
+                        font-size: 23px;
+                    }
+    
+                    @include QuerieMaxWidth($mobileSm){
+                        font-size: 16px;
+                    }
+                    
+                }
+            }
+        }
+
     }
-}
+}  
 
 #mapid {
     z-index: 1;

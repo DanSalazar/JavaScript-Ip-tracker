@@ -12,18 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let myMap = L.map('mapid',{
         zoomControl: false
-    })
+    });
 
     let iconMap = L.icon({
         iconUrl: '../images/icon-location.svg',
         iconSize: [20, 24]
-
     })
 
     L.tileLayer(tilesMapProvider, {
         maxZoom: 18,
     }).addTo(myMap)
-
 
     // Functions
 
