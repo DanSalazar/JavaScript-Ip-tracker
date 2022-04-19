@@ -15,7 +15,7 @@ main {
 }
 
 main .header {
-  background: url(../images/pattern-bg.png) no-repeat center/cover;
+  background: url(../assets/pattern-bg.png) no-repeat center/cover;
   color: #fff;
   max-height: 35vh;
   display: flex;
@@ -42,19 +42,15 @@ main .header h1 {
 }
 
 main .header form {
-  text-align: center;
-  margin: 0px 0px 20px 0px;
+  display: flex;
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
 }
 
 @media only screen and (min-width: 1024px) {
   main .header form {
-    margin: 0px 0px 45px 0px;
-  }
-}
-
-@media only screen and (max-width: 325px) {
-  main .header form {
-    margin: 0px 0px 20px 0px;
+    width: 40%;
   }
 }
 
@@ -63,15 +59,11 @@ main .header form input {
   padding: 16px;
   border-radius: 12px 0px 0px 12px;
   font-family: "Rubik", sans-serif;
-  position: relative;
-  right: -1%;
-  width: 75%;
   color: #2b2b2b;
-  margin-top: 20px;
   font-weight: 400;
   border: none;
   outline: none;
-  cursor: pointer;
+  flex: 10 1 auto;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -82,16 +74,14 @@ main .header form input {
 }
 
 main .header form button {
-  position: relative;
   padding: 16px;
-  left: -1%;
-  width: 15%;
   background: #000;
   outline: none;
   border: none;
   border-radius: 0px 12px 12px 0px;
   cursor: pointer;
   transition: 0.2s linear;
+  flex: 1 1 auto;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -215,5 +205,22 @@ main .header .parameters .p-container h4 {
   #mapid {
     height: 80vh;
   }
+}
+
+.error-input {
+  color: #f17890;
+  font-weight: 400;
+  font-size: 14px;
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 /*# sourceMappingURL=styles.css.map */
